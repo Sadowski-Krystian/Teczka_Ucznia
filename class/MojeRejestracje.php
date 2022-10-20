@@ -1,6 +1,6 @@
 <?php
-
-class MojeRejestracje implements iLista, iEksportPDF, iEksportCSV, iKontroler{
+//  implements iLista, iEksportPDF, iEksportCSV, iKontroler
+class MojeRejestracje implements iKontroler, iLista{
     private $etykieta = 'Moje rejestracje';
     public function nazwa(){
         return get_class($this);

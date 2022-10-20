@@ -4,26 +4,27 @@ $dir = "./class/";
 include($dir."TeczkaSzkolen.php");
 include($dir."MojeRejestracje.php");
 include($dir."Zaswiadczenia.php");
+include($dir."View.php");
 
 $vw = new View();
-$ucz = new Uczestnik(13, 'Grzegorz', 'Petri', 'm', "2002-02-20", 'Gorzów', '789-123-456', 'gpetri@gplweb.pl');
+// $ucz = new Uczestnik(13, 'Grzegorz', 'Petri', 'm', "2002-02-20", 'Gorzów', '789-123-456', 'gpetri@gplweb.pl');
 
-$dp = new DanePersonalne(null, $ucz);
+// $dp = new DanePersonalne(null, $ucz);
 $mr = new MojeRejestracje($vw);
 $za = new Zaswiadczenia();
-$ts = new TeczkaSzkolen($dp, $vw);
+$ts = new TeczkaSzkolen($vw);
 
 
 $action = isset($_GET['act']) ? $_GET['act'] : 'intro';
-$ts->dodajUsluge($dp);
+// $ts->dodajUsluge($dp);
 $ts->dodajUsluge($mr);
 $ts->dodajUsluge($za);
 $lst = $ts->listaUslug();
 $link = '#link';
-$title = $ts->getTitle();
-$body = $ts->render($action);
+// $title = $ts->getTitle();
+// $body = $ts->render($action);
 $lista = $vw->render('menu', $lst, $args=array('link'=>$link));
-$args = array('osoba'=>$dp->wyswietlPersonalia(), 'body'=>$body);
+// $args = array('osoba'=>$dp->wyswietlPersonalia(), 'body'=>$body);
 $okno = $vw->render('okno', $lista, $args);
 $html = $vw->render('dokumentHTML', $okno, $args=array('title'=>$title));
 echo $html;

@@ -3,7 +3,7 @@
 class View{
 
     public function render($szablon, $dane, $args=null){
-        $pathFinder = "views/{$szablob}.php";
+        $pathFinder = "views/{$szablon}.php";
         if(file_exists($pathFinder)){
             include($pathFinder);
         }else{

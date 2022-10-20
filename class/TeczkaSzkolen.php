@@ -3,11 +3,11 @@ class TeczkaSzkolen{
   private $dlaKogo;
   private $uslugi = array();
   
-  function __construct( $danePersonalne ){
-    $this->dlaKogo = $danePersonalne;
-  }
+  // function __construct( $danePersonalne ){
+  //   $this->dlaKogo = $danePersonalne;
+  // }
 
-  public function dodajUsługe( $usluga ){
+  public function dodajUsluge( $usluga ){
     $this->uslugi[] = $usluga;
   }
 

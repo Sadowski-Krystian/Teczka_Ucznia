@@ -1,5 +1,6 @@
 <?php
-class Zaswiadczenia implements iLista, iEksportPDF, iEksportCSV, iKontroler{
+// implements iLista, iEksportPDF, iEksportCSV, iKontroler
+class Zaswiadczenia implements iKontroler, iLista{
     private $etykieta = 'Zaświadczenia';
     public function nazwa(){
         return get_class($this);
